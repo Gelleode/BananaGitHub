@@ -5,17 +5,19 @@ public class Program
     {
         double number = EnterDouble();
 
-        Console.WriteLine($"{FunctionF(number)}");
+        Console.WriteLine($"Answer is: {FunctionF(number)}");
     }
     private static double EnterDouble()
     {
         double number;
+        Console.WriteLine("Enter a number");
         while (true)
         {
             string? input = Console.ReadLine();
             bool parse = double.TryParse(input, out number);
             if (parse)
                 break;
+            Console.WriteLine("Enter correct number");
         }
         return number;
     }
